@@ -53,10 +53,10 @@ router.post('/', (req, res) => {
     .catch(err => console.log(err));
 });
 
-// @Route:    GET api/auth/user
-// @Desc:     Get user data
-// Access:    Private
-router.get('/user', auth, (req, res) => {
+// // @Route:    GET api/auth/user
+// // @Desc:     Get user data
+// // Access:    Private
+router.get('/user', (req, res) => {
   User.findById(req.user.id)
     .then(user => res.json(user));
 });
